@@ -1,0 +1,42 @@
+@import './variables.scss';
+
+.card {
+  width: 367px;
+  height: 421px;
+  border-radius: 5px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: 0.3s;
+  padding: 56px 51px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items:flex-start;
+  &:hover {
+    transform: scale(1.00999);
+  }
+  &__title {
+    font-size: 43px;
+    color: #fff;
+  }
+  &__type {
+    margin: 19px 0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: none;
+    font-size: 17px;
+    background: #fff;
+    cursor: pointer;
+  }
+  &__delBtn {
+    margin: 19px 0;
+    padding: 10px 19px;
+    border-radius: 16px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+  }
+}
+.active {
+  box-shadow: 0 0 15px $filterActive;
+}

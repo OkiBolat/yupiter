@@ -1,7 +1,7 @@
 import instance from './instance'
 
 const getCards = () => {
-  return instance("items")
+  return instance('?page=1&limit=9')
 }
 
 const deleteCard = (obj) => {

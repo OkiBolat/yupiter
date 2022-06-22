@@ -4,18 +4,20 @@ import { getCardsThunk } from './actions'
 const cardsSlice = createSlice({
   name: 'cards',
   initialState: {
-    filterParams: {
-      stops: [],
-      choice: '',
-    },
     cards: [],
     filteredCards: [],
+    filteredOption: '',
     sortType: null,
     requestInProgress: false,
   },
   reducers: {
-    getCardsByFilter (state, action) {
-      state.filteredCards = state.cards.cards.filter(img => img.type === action.payload)
+    addFilteredOption (state, action) {
+      if(action.payload === state.filteredOption || action.payload === 'Show All') {
+        state.filteredOption = ''
+        state.filteredCards = state.cards
+      }else {
+        state.filteredOption = action.payload
+      }
     },
     deleteCard (state, action) {
       state.filteredCards = state.cards.filter(img => img.id !== action.payload)
@@ -36,6 +38,6 @@ const cardsSlice = createSlice({
   }
 });
 
-export const { getCardsByFilter, deleteCard } = cardsSlice.actions;
+export const { addFilteredOption, deleteCard } = cardsSlice.actions;
 
 export default cardsSlice.reducer;

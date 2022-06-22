@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+.filter {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  list-style: none;
+  max-width: 580px;
+  width: 100%;
+  padding-top: 80px;
+  &__item {
+    cursor: pointer;
+    transition: 0.3s;
+  .active {
+      color: $filterActive;
+    }
+    &:hover {
+      color: $filterActive;
+    }
+  }
+}
+.active {
+  color: $filterActive;
+  text-shadow: 0 0 15px $filterActive;
+}

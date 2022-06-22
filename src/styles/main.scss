@@ -1,7 +1,36 @@
+@import './variables.scss';
+
 .main {
+  background-color:$background-main;
+  margin: 0;
   &__container {
     margin: 0 auto;
     max-width: 1167px;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  }
+  &__cards {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    row-gap: 28px;
+    column-gap: 32px;
+    margin-bottom: 30px;
+    margin-top: 79px;
+  }
+  &__btn {
+    margin-bottom: 184px;
+    margin-top: 50px;
+    padding: 15px 42px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    text-transform: uppercase;
+    box-shadow: 0 0 10px #707070;
+    cursor: pointer;
   }
 }

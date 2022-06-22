@@ -1,18 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import '../styles/card.scss';
 
-const Card = ({ type, title }) => {
+const Card = ({card, addOption }) => {
+  const[active, setActive] = useState(null)
+
+  const { type, name, image, id} = card;
+
+  const setActiveCard = (id) => {
+    if(id === active) {
+      setActive(null)
+    }else {
+      setActive(id)
+    }
+  };
+
   return (
-    <div className="card">
+    <div onClick={() => setActiveCard(id)} style={{backgroundImage: `URL(${image})`}} 
+    className={active === id ? 'card active' : "card"}>
       <button className="card__delBtn">
         Del
       </button>
-      <button className="card__type">
-        Design
+      <button onClick={() => addOption(type)} className="card__type">
+        {type}
       </button>
       <div className="card__title">
-        SOFA
+        {name.substring(0,10)}
       </div>
     </div>
   )
