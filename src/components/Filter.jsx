@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { filter } from '../constants/filter';
+import cn from 'classnames';
 
-import '../styles/filter.scss';
+import styles from '../styles/filter.module.scss';
 
 const Filter = ({addOption}) => {
   const [active, setActive] = useState('')
@@ -14,10 +15,12 @@ const Filter = ({addOption}) => {
     addOption(option)
   }
   return (
-    <ul className="filter">
+    <ul className={styles.filter}>
       {filter.map((item, index) => <li
         key={index}
-        className={active === item ? 'filter__item active' : "filter__item"}
+        className={cn(styles.filter__item, active === item && styles.active)
+        }
+        // className={active === item ? 'filter__item active' : "filter__item"}
         onClick={() => getOption(item)}
         >{item
         }</li>)}

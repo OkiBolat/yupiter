@@ -20,7 +20,7 @@ const cardsSlice = createSlice({
       }
     },
     deleteCard (state, action) {
-      state.filteredCards = state.cards.filter(img => img.id !== action.payload)
+      state.filteredCards = state.cards.filter(card => card.id !== action.payload)
     },
   },
   extraReducers: {
@@ -28,7 +28,7 @@ const cardsSlice = createSlice({
       state.requestInProgress = true
     },
     [getCardsThunk.fulfilled]: (state, action) => {
-      state.cards = action.payload;
+      state.cards = {...state.cards, ...action.payload};
       state.filteredCards = action.payload;
       state.requestInProgress = false
     },

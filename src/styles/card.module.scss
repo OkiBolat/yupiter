@@ -11,14 +11,17 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  align-items:flex-start;
+  align-items: flex-start;
+
   &:hover {
     transform: scale(1.00999);
   }
+
   &__title {
     font-size: 43px;
     color: #fff;
   }
+
   &__type {
     margin: 19px 0;
     padding: 8px 16px;
@@ -28,15 +31,30 @@
     background: #fff;
     cursor: pointer;
   }
+
   &__delBtn {
+    visibility: hidden;
     margin: 19px 0;
     padding: 10px 19px;
     border-radius: 16px;
     border: none;
     background: #fff;
     cursor: pointer;
+    transition: 0.1s;
   }
 }
+
 .active {
+  outline: 5px solid $filterActive;
   box-shadow: 0 0 15px $filterActive;
+}
+
+.hiddenBtn {
+  visibility: inherit;
+  margin: 19px 0;
+  padding: 10px 19px;
+  border-radius: 16px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
 }
