@@ -8,7 +8,7 @@ const Home = () => {
   const cards = useSelector(state => state.cards.filteredCards);
   const option = useSelector(state => state.cards.filteredOption)
   const cardsWithFilters = useMemo(() => {
-    if (option !== '') {
+    if (option !== '' && option !== 'Show All') {
       return cards.filter(card => card.type === option)
     }
     return cards

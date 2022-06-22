@@ -12,10 +12,20 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
+  cursor: pointer;
 
-  &:hover {
-    transform: scale(1.00999);
+  @media screen and (max-width: 1040px) {
+    max-width: 326px;
+    height: 416px;
+    width: 100%;
   }
+
+  @media screen and (min-width: 1040px) {
+    &:hover {
+      transform: scale(1.00999);
+    }
+  }
+
 
   &__title {
     font-size: 43px;
@@ -30,31 +40,14 @@
     font-size: 17px;
     background: #fff;
     cursor: pointer;
-  }
-
-  &__delBtn {
-    visibility: hidden;
-    margin: 19px 0;
-    padding: 10px 19px;
-    border-radius: 16px;
-    border: none;
-    background: #fff;
-    cursor: pointer;
-    transition: 0.1s;
+    transition: 0.2s;
+    &:hover { background:rgb(209, 207, 207)}
   }
 }
 
-.active {
-  outline: 5px solid $filterActive;
-  box-shadow: 0 0 15px $filterActive;
-}
-
-.hiddenBtn {
-  visibility: inherit;
-  margin: 19px 0;
-  padding: 10px 19px;
-  border-radius: 16px;
-  border: none;
-  background: #fff;
-  cursor: pointer;
+@media screen and (min-width: 1040px) {
+  .active {
+    outline: 5px solid $filterActive;
+    box-shadow: 0 0 15px $filterActive;
+  }
 }

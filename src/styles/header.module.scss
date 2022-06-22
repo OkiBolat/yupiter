@@ -17,6 +17,11 @@
     justify-content: space-between;
     padding: 13px 0;
     align-items: center;
+    @media screen and (max-width: 1040px) {
+      display: flex;
+      justify-content: center;
+      align-items:center;
+    }
   }
 
   &__nav {
@@ -26,6 +31,9 @@
     width: 55%;
     cursor: pointer;
     color: #fff;
+    @media screen and (max-width: 1040px) {
+      display: none;
+    }
   }
 
   &__item {
@@ -50,6 +58,9 @@
     border: 0.2px solid #fff;
     color: #fff;
     background-color: transparent;
+    @media screen and (max-width: 1040px) {
+      display: none;
+    }
   }
 
   &__main {
@@ -70,5 +81,9 @@
     width: 575px;
     text-align: center;
     line-height: 28px;
+    @media screen and (max-width: 1040px) {
+      max-width: 300px;
+      width: 100%;
+    }
   }
 }

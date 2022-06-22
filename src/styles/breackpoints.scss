@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+@mixin sm-u {
+  @media (min-width: map-get(&breackpoints, sm)) {
+    @content 
+  }
+};
+@mixin lg-u {
+  @media (min-width: map-get(&breackpoints, lg)) {
+    @content 
+  }
+}

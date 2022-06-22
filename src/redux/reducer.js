@@ -12,15 +12,17 @@ const cardsSlice = createSlice({
   },
   reducers: {
     addFilteredOption (state, action) {
-      if(action.payload === state.filteredOption || action.payload === 'Show All') {
-        state.filteredOption = ''
-        state.filteredCards = state.cards
+      if(action.payload === state.filteredOption) {
+        state.filteredOption = '';
       }else {
         state.filteredOption = action.payload
       }
     },
+    addFilteredOptionWithSelet (state, action) {
+      state.filteredOption = action.payload
+    },
     deleteCard (state, action) {
-      state.filteredCards = state.cards.filter(card => card.id !== action.payload)
+      state.filteredCards = state.filteredCards.filter(card => Number(card.id) !== Number(action.payload))
     },
   },
   extraReducers: {
@@ -28,8 +30,8 @@ const cardsSlice = createSlice({
       state.requestInProgress = true
     },
     [getCardsThunk.fulfilled]: (state, action) => {
-      state.cards = {...state.cards, ...action.payload};
-      state.filteredCards = action.payload;
+      state.cards = [...state.cards, ...action.payload];
+      state.filteredCards = state.cards
       state.requestInProgress = false
     },
     [getCardsThunk.rejected]: () => {
@@ -38,6 +40,6 @@ const cardsSlice = createSlice({
   }
 });
 
-export const { addFilteredOption, deleteCard } = cardsSlice.actions;
+export const {addFilteredOptionWithSelet, addFilteredOption, deleteCard } = cardsSlice.actions;
 
 export default cardsSlice.reducer;
