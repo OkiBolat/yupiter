@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/yupiter/static/css/main.2de13d4a.css",
+    "main.js": "/yupiter/static/js/main.67102f44.js",
+    "index.html": "/yupiter/index.html",
+    "main.2de13d4a.css.map": "/yupiter/static/css/main.2de13d4a.css.map",
+    "main.67102f44.js.map": "/yupiter/static/js/main.67102f44.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2de13d4a.css",
+    "static/js/main.67102f44.js"
+  ]
+}
