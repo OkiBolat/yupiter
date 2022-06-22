@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/yupiter/static/css/main.2de13d4a.css",
-    "main.js": "/yupiter/static/js/main.63ff351c.js",
+    "main.js": "/yupiter/static/js/main.ba61a22a.js",
     "index.html": "/yupiter/index.html",
     "main.2de13d4a.css.map": "/yupiter/static/css/main.2de13d4a.css.map",
-    "main.63ff351c.js.map": "/yupiter/static/js/main.63ff351c.js.map"
+    "main.ba61a22a.js.map": "/yupiter/static/js/main.ba61a22a.js.map"
   },
   "entrypoints": [
     "static/css/main.2de13d4a.css",
-    "static/js/main.63ff351c.js"
+    "static/js/main.ba61a22a.js"
   ]
 }
