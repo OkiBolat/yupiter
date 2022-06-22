@@ -6,15 +6,21 @@ import { addFilteredOption, deleteCard } from '../redux/reducer'
 
 import styles from '../styles/main.module.scss';
 import { getCardsThunk } from '../redux/actions';
+import MyLoader from './Loader';
+
+const arr = [1,2,3,4,5,6,7,8,9]
 
 const Main = ({ cards }) => {
   const [active, setActive] = useState('')
+  const [activeOption, setActiveOption] = useState('')
   const [page, setPage] = useState(1);
   const dispatch = useDispatch()
 
-  console.log(typeof active)
 
   const getNewTickets = () => {
+    setActive('')
+    setActiveOption('')
+    dispatch(addFilteredOption(''))
     setPage(page + 1);
     dispatch(getCardsThunk(page + 1));
   };
@@ -25,8 +31,8 @@ const Main = ({ cards }) => {
   
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const onKeypress = e => {
-    console.log(e.keyCode)
-    if (e.keyCode === 93) {
+    console.log(e)
+    if (e.keyCode === 46 || e.key === 'BACK_SPACE') {
       if(active) dispatch(deleteCard(active))
     };
   }
@@ -45,9 +51,12 @@ const Main = ({ cards }) => {
   return (
     <div className={styles.main}>
       <div className={styles.main__container}>
-        <Filter addOption={addOption} />
+        <Filter 
+        active={activeOption}
+        setActive={setActiveOption}
+        addOption={addOption} />
         <div className={styles.main__cards}>
-          {!cards?.length ? <h1>No more</h1> : cards.map(card => <Card
+          {!cards?.length ? arr.map(i => <MyLoader key={i} />): cards.map(card => <Card
             isActive={active}
             setIsActive={setActive}
             key={card.id}

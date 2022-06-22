@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { filter } from '../constants/filter';
 import cn from 'classnames';
 
@@ -6,8 +6,7 @@ import styles from '../styles/filter.module.scss';
 import { addFilteredOptionWithSelet } from '../redux/reducer';
 import { useDispatch } from 'react-redux';
 
-const Filter = ({ addOption }) => {
-  const [active, setActive] = useState('')
+const Filter = ({ addOption, active, setActive }) => {
   const dispatch = useDispatch()
   const getOption = (option) => {
     if (active === option) {
