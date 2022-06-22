@@ -1,9 +1,9 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import logo from '../assets/images/logo.png';
 import styles from '../styles/header.module.scss';
 
-const Header = () => {
-  return (
+const Header = () => (
     <div className={styles.header}>
       <div className={styles.header__container}>
         <div className={styles.header__bar}>
@@ -24,7 +24,6 @@ const Header = () => {
         </div>
       </div>
     </div>
-  )
-};
+);
 
 export default Header;

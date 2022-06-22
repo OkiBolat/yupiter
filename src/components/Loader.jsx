@@ -1,8 +1,10 @@
-import React from "react"
-import ContentLoader from "react-content-loader"
+// eslint-disable-next-line no-unused-vars
+import React from 'react';
+// eslint-disable-next-line no-unused-vars
+import ContentLoader from 'react-content-loader';
 
 const MyLoader = (props) => (
-  <ContentLoader 
+  <ContentLoader
     speed={1}
     width={326}
     height={416}
@@ -13,6 +15,6 @@ const MyLoader = (props) => (
   >
     <rect x="0" y="0" rx="17" ry="17" width="330" height="416" />
   </ContentLoader>
-)
+);
 
 export default MyLoader;

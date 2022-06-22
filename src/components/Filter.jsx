@@ -1,27 +1,26 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
-import { filter } from '../constants/filter';
 import cn from 'classnames';
-
+import { useDispatch } from 'react-redux';
+import { filter } from '../constants/filter';
 import styles from '../styles/filter.module.scss';
 import { addFilteredOptionWithSelet } from '../redux/reducer';
-import { useDispatch } from 'react-redux';
 
 const Filter = ({ addOption, active, setActive }) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const getOption = (option) => {
     if (active === option) {
-      setActive('')
+      setActive('');
     } else {
-      setActive(option)
+      setActive(option);
     }
-    addOption(option)
+    addOption(option);
   };
 
   const getSelectedOption = (option) => {
-    setActive(option)
-    dispatch(addFilteredOptionWithSelet(option))
+    setActive(option);
+    dispatch(addFilteredOptionWithSelet(option));
   };
-
 
   return (<>
     <ul className={styles.filter}>
@@ -30,14 +29,11 @@ const Filter = ({ addOption, active, setActive }) => {
       </select>
       {filter.map((item, index) => <li
         key={index}
-        className={cn(styles.filter__item, active === item && styles.active)
-        }
+        className={cn(styles.filter__item, active === item && styles.active)}
         onClick={() => getOption(item)}
-      >{item
-        }</li>)}
+      >{item}</li>)}
     </ul>
   </>
-  )
+  );
 };
-
 export default Filter;
