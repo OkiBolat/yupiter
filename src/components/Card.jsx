@@ -4,7 +4,7 @@ import cn from 'classnames';
 import styles from '../styles/card.module.scss';
 
 const Card = ({
-  card, addOption, isActive, setIsActive,
+  card, addOption, isActive, setIsActive, activeOption, setActiveOption
 }) => {
   const {
     type, name, image, id,
@@ -21,7 +21,14 @@ const Card = ({
 
   const onAddOption = (e, option) => {
     e.stopPropagation();
-    addOption(option);
+
+    if (activeOption === option) {
+      setActiveOption('')
+      addOption('');
+    } else {
+      addOption(option);
+      setActiveOption(option)
+    }
   };
 
   return (

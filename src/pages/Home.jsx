@@ -13,6 +13,7 @@ const Home = () => {
     }
     return cards;
   }, [cards, option]);
+  
   return (
     <div className={styles.home}>
       <Header />

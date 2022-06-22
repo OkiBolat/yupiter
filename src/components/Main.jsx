@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 // eslint-disable-next-line import/extensions
 import Card from './Card';
-import Filter from './Filter.1';
+import Filter from './Filter';
 import { addFilteredOption, deleteCard } from '../redux/reducer';
 
 import styles from '../styles/main.module.scss';
@@ -32,8 +32,8 @@ const Main = ({ cards }) => {
     dispatch(addFilteredOption(option));
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const onKeypress = (e) => {
-    // eslint-disable-next-line no-console
     console.log(e);
     if (e.keyCode === 46 || e.key === 'BACK_SPACE') {
       if (active) dispatch(deleteCard(active));
@@ -62,7 +62,9 @@ const Main = ({ cards }) => {
           {!cards?.length ? arr.map((i) => <MyLoader key={i} />) : cards.map((card) => <Card
             isActive={active}
             setIsActive={setActive}
+            setActiveOption={setActiveOption}
             key={card.id}
+            activeOption={activeOption}
             addOption={addOption}
             deleteCard={onDeleteCard}
             card={card} />)}

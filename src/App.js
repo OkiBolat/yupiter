@@ -9,6 +9,7 @@ function App() {
   useEffect(() => {
     dispatch(getCardsThunk(1));
   },[dispatch]);
+  
   return (
     <div className="app">
       <Home />
